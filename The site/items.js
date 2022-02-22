@@ -1,0 +1,81 @@
+let d =
+  "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, eaque unde commodi, asperiores eos minima sequi veniam maxime error porro iusto saepe temporibus quaerat ex suscipit dolor praesentium ab, tenetur dolorum nobis deleniti laborum consequatur assumenda! At quis a libero.";
+let items = [
+  {
+    name: "PS5",
+    availability: false,
+    description: d,
+    price: "499",
+    image: "./imgs/ps5.png",
+  },
+  {
+    name: "Xbox series X",
+    availability: false,
+    description: d,
+    price: "499",
+    image: "./imgs/xsx.png",
+  },
+  {
+    name: "Xbox series S",
+    availability: true,
+    description: d,
+    price: "299",
+    image: "./imgs/xss.png",
+  },
+  {
+    name: "Helly Hansen",
+    availability: true,
+    description: d,
+    price: "60",
+    image: "./imgs/LokeJ.png",
+  },
+  {
+    name: "Twentyfour",
+    availability: true,
+    description: d,
+    price: "40",
+    image: "./imgs/Twentyfour.png",
+  },
+  {
+    name: "Vlaude",
+    availability: true,
+    description: d,
+    price: "140",
+    image: "./imgs/Vlaude.png",
+  },
+  {
+    name: "Haglöfs jacket",
+    availability: true,
+    description: d,
+    price: "279",
+    image: "./imgs/Haglöfs.png",
+  },
+  {
+    name: "Haglöfs jacket",
+    availability: true,
+    description: d,
+    price: "279",
+    image: "./imgs/Haglöfs2.png",
+  },
+  {
+    name: "Haglöfs jacket",
+    availability: true,
+    description: d,
+    price: "199",
+    image: "./imgs/Haglöfs3.png",
+  },
+  {
+    name: "Haglöfs jacket",
+    availability: true,
+    description: d,
+    price: "199",
+    image: "./imgs/Haglöfs4.png",
+  },
+  {
+    name: "Haglöfs jacket",
+    availability: true,
+    description: d,
+    price: "189",
+    image: "./imgs/Haglöfs5.png",
+  },
+];

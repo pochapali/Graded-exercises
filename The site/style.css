@@ -1,0 +1,69 @@
+header {
+  background-color: #0081cf;
+  gap: 0px;
+  height: 80px;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+}
+body {
+  margin: 0;
+}
+header div img {
+  width: 80px;
+  max-height: 80px;
+}
+.logo {
+  grid-column: 1/2;
+  max-width: 80px;
+}
+.cart {
+  position: relative;
+  grid-column: 3/4;
+  max-width: 80px;
+}
+.cart img {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+}
+.items {
+  display: flex;
+
+  flex-wrap: wrap;
+  flex: 200px;
+}
+.item {
+  width: 300px;
+  height: 200px;
+
+  display: grid;
+  grid-template-columns: 135px 1fr;
+  grid-template-rows: 135px 1fr;
+}
+.item {
+  background-color: rgb(184, 181, 181);
+}
+.item .name {
+  font-size: 20px;
+}
+.item .price {
+  font-size: 27px;
+}
+.items .image img {
+  width: 135px;
+  height: 135px;
+}
+.image {
+  width: 135px;
+  height: 135px;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+#headerImg div img {
+  height: 200px;
+  width: 200px;
+}
+#headerImg a {
+  height: 200px;
+  width: 200px;
+}
