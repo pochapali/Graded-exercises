@@ -67,3 +67,11 @@ header div img {
   height: 200px;
   width: 200px;
 }
+.btn-primary {
+  grid-column: 2/3;
+  grid-row: 2 /3;
+}
+.detailed-image img {
+  height: 300px;
+  width: 300px;
+}

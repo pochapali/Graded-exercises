@@ -7,16 +7,19 @@
     <title>document</title>
     <link rel="stylesheet" href="style.css" />
     <script src="items.js"></script>
-    <script src="index.js" async></script>
+    <script src="index.js"></script>
   </head>
-  <body>
+  <body onload="addItems()">
     <header>
       <div class="logo" id="headerImg">
         <img src="imgs/LogoKaban.png" alt="" />
       </div>
       <div class="cart" id="headerImg">
         <a href="cart.html">
-          <img src="imgs\shopping_cart.png" alt="" /><span>0</span>
+          <img src="imgs\shopping_cart.png" alt="" /><span
+            class="cart-total-price"
+            >0</span
+          >
         </a>
       </div>
     </header>
