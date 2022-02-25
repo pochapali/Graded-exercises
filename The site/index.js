@@ -4,6 +4,7 @@ function addItems() {
   }
 }
 function addItem(index) {
+  ///just adding items in detail view using data from variable
   let newElement = document.createElement("div");
   if (items[index].availability == true) {
     newElement.innerHTML = `
@@ -29,6 +30,7 @@ function addItem(index) {
 }
 
 function showDetailView(itemData, index) {
+  ///switches to detail view
   let target = document.getElementsByClassName("items")[0];
   window.localStorage.setItem("activeItemId", JSON.stringify(itemData));
   target.innerHTML = `<div>
@@ -49,22 +51,20 @@ function showDetailView(itemData, index) {
   }
 }
 function goBack() {
+  ///switchs back to items list
   window.localStorage.removeItem("activeItemId");
   let target = document.getElementsByClassName("items")[0];
   target.innerHTML = "";
   addItems();
 }
-function upgradeCartTotal() {
-  let cartItemNumber = document.getElementsByClassName("cart-total-price")[0];
-  console.log(cartItemNumber);
-}
 /////cart stuff
 function updateItemsNumber() {
+  ///updates number of items near cart icon
   let numberPlace = document.getElementsByClassName("cart-total-amount")[0];
-  console.log;
   numberPlace.innerHTML = cart[0].itemAmount;
 }
 function showCart() {
+  ///switchs to cartView
   let sum = 0;
   for (let i = 0; i < cart[1].length; i++) {
     sum += cart[1][i].price * cart[1][i].quantity;
