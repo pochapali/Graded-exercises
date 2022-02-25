@@ -34,22 +34,19 @@ function showDetailView(itemData, index) {
   target.innerHTML = `<div>
   <div class="detailed-image"><img src="${itemData.image}"></div>
   <div >${itemData.name}</div>
-  <div>${itemData.price}</div>
+  <div>${itemData.price}€</div>
   <div>${itemData.description}</div>
   </div>
   <button onclick="goBack()">Back</button>
   `;
   if (itemData.availability != false) {
     target.innerHTML += `<button class="btn btn-primary shop-item-add" type="button" id=${index}>Add to cart</button>`;
+    var addCartButton = document.getElementsByClassName("btn-primary")[0];
+    addCartButton.addEventListener("click", function (event) {
+      let buttonClicked = event.target;
+      addItemToCartObj(index, false);
+    });
   }
-
-  var addCartButton = document.getElementsByClassName("btn-primary")[0];
-  addCartButton.addEventListener("click", function (event) {
-    let buttonClicked = event.target;
-
-    addItemToCart(index);
-    ///was just playing with the button and found a way how to delete element
-  });
 }
 function goBack() {
   window.localStorage.removeItem("activeItemId");
@@ -65,7 +62,7 @@ function upgradeCartTotal() {
 
 function showCart() {
   let target = document.getElementsByClassName("items")[0];
-  window.localStorage.setItem("justCart", JSON.stringify(itemData));
+  window.localStorage.setItem("justCart", JSON.stringify());
   target.innerHTML = `<div>
   <div class="cart-header">
   <div class="cart-total">total amount of items in cart: ${cart[0].ItemAmount}</div>
@@ -73,8 +70,24 @@ function showCart() {
   <div class="cart-items"></div>
   <button onclick="goBack()">Back</button>
   `;
+  for (let i = 0; i < cart[1].length; i++) {
+    addItemToCart(cart[1][i], target);
+  }
 }
-function addItemToCart(itemId) {
+function addItemToCart(item, target) {
+  ///adds items to cart when it is opening
+  let cart;
+  console.log(target);
+  target.getElementsByClassName("cart-items")[0].innerHTML += `
+    <div class="image"><img src="${item.image}"></div>
+  <div >${item.name}</div>
+  <div>${item.price}€</div>
+  <div>quantity: ${item.quantity}</div>
+  </div>
+    `;
+}
+function addItemToCartObj(itemId, isVisible) {
+  ///adds items to cart list in cart.js
   cart[0].ItemAmount += 1;
   if (cart[1].length != 0) {
     let inCart = false;
@@ -105,6 +118,15 @@ function addItemToCart(itemId) {
         items[itemId].image
       )
     );
+  }
+  if (isVisible == true) {
+    target.getElementsByClassName[0].innerHTML += `
+    <div class="detailed-image"><img src="${items[itemId].image}"></div>
+  <div >${items[itemId].name}</div>
+  <div>${items[itemId].price}€</div>
+  <div>${items[itemId].description}</div>
+  </div>
+    `;
   }
   console.log(cart);
 }
