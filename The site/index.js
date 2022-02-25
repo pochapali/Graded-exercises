@@ -77,7 +77,7 @@ function showCart() {
   </div>
   <div class="cart-items"></div>
   <button onclick="goBack()">Back</button>
-  `;
+  <button onclick='alert("Kiitos paljon!"); window.location.reload();'>Purchase</button>`;
   for (let i = 0; i < cart[1].length; i++) {
     addItemToCart(cart[1][i], target);
   }
