@@ -9,7 +9,7 @@ class cartItem {
 }
 let cart = [
   {
-    ItemAmount: 0,
+    itemAmount: 0,
   },
   [],
 ];

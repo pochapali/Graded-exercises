@@ -59,7 +59,11 @@ function upgradeCartTotal() {
   console.log(cartItemNumber);
 }
 /////cart stuff
-
+function updateItemsNumber() {
+  let numberPlace = document.getElementsByClassName("cart-total-amount")[0];
+  console.log;
+  numberPlace.innerHTML = cart[0].itemAmount;
+}
 function showCart() {
   let sum = 0;
   for (let i = 0; i < cart[1].length; i++) {
@@ -69,7 +73,7 @@ function showCart() {
   window.localStorage.setItem("justCart", JSON.stringify());
   target.innerHTML = `<div>
   <div class="cart-header">
-  <div class="cart-total">Total amount of items in cart: ${cart[0].ItemAmount} With price: ${sum}</div>
+  <div class="cart-total">Total amount of items in cart: ${cart[0].itemAmount} With price: ${sum}</div>
   </div>
   <div class="cart-items"></div>
   <button onclick="goBack()">Back</button>
@@ -92,7 +96,7 @@ function addItemToCart(item, target) {
 }
 function addItemToCartObj(itemId, isVisible) {
   ///adds items to cart list in cart.js
-  cart[0].ItemAmount += 1;
+  cart[0].itemAmount += 1;
   if (cart[1].length != 0) {
     let inCart = false;
     for (let i = 0; i < cart[1].length; i++) {
@@ -133,4 +137,5 @@ function addItemToCartObj(itemId, isVisible) {
     `;
   }
   console.log(cart);
+  updateItemsNumber();
 }
