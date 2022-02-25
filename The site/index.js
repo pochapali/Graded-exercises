@@ -61,11 +61,15 @@ function upgradeCartTotal() {
 /////cart stuff
 
 function showCart() {
+  let sum = 0;
+  for (let i = 0; i < cart[1].length; i++) {
+    sum += cart[1][i].price * cart[1][i].quantity;
+  }
   let target = document.getElementsByClassName("items")[0];
   window.localStorage.setItem("justCart", JSON.stringify());
   target.innerHTML = `<div>
   <div class="cart-header">
-  <div class="cart-total">total amount of items in cart: ${cart[0].ItemAmount}</div>
+  <div class="cart-total">Total amount of items in cart: ${cart[0].ItemAmount} With price: ${sum}</div>
   </div>
   <div class="cart-items"></div>
   <button onclick="goBack()">Back</button>
@@ -76,7 +80,7 @@ function showCart() {
 }
 function addItemToCart(item, target) {
   ///adds items to cart when it is opening
-  let cart;
+
   console.log(target);
   target.getElementsByClassName("cart-items")[0].innerHTML += `
     <div class="image"><img src="${item.image}"></div>
