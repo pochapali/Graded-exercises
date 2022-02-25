@@ -73,7 +73,7 @@ function showCart() {
   window.localStorage.setItem("justCart", JSON.stringify());
   target.innerHTML = `<div>
   <div class="cart-header">
-  <div class="cart-total">Total amount of items in cart: ${cart[0].itemAmount} With price: ${sum}</div>
+  <div class="cart-total">Total amount of items in cart: ${cart[0].itemAmount} With price: ${sum}€</div>
   </div>
   <div class="cart-items"></div>
   <button onclick="goBack()">Back</button>
